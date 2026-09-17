@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+            integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <!-- Inter Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" th:href="@{/css/login.css}" />
+    </head>
+    <body>
+        <main>
+            <div id="model-3d"></div>
+
+            <div class="interaction-wrapper">
+                <div class="interaction">
+                    <img
+                        th:src="@{/images/pucminas-logo.png}"
+                        alt="Logo PUC Minas"
+                        class="interaction-icon"
+                    />
+
+                    <h1 class="interaction-title">Login</h1>
+
+                    <div th:if="${param.cadastro}" class="interaction-message">
+                        <strong>Cadastro realizado com sucesso!</strong>
+
+                        <br />
+
+                        <span>Agora você já pode fazer login.</span>
+                    </div>
+
+                    <form th:action="@{/login}" method="post">
+                        <div class="input-wrapper">
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Usuário"
+                                autocomplete="username"
+                                required
+                            />
+                        </div>
+
+                        <div class="input-wrapper">
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Senha"
+                                autocomplete="current-password"
+                                required
+                            />
+                        </div>
+
+                        <button type="submit">Entrar</button>
+                    </form>
+
+                    <p class="interaction-options">
+                        Ainda não tem cadastro?
+
+                        <br />
+
+                        <a href="/register">Cadastre-se</a>
+
+                        <span>|</span>
+
+                        <a href="/recoverpassword">Esqueceu sua senha?</a>
+                    </p>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
