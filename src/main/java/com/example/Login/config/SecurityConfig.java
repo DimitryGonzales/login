@@ -30,6 +30,8 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/login/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/css/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/images/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/js/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/models/**").permitAll()
                         .requestMatchers(HttpMethod.GET, "/register").permitAll()
                         .requestMatchers(HttpMethod.POST, "/register").permitAll()
                         .requestMatchers(HttpMethod.GET, "/recoverpassword").permitAll()
