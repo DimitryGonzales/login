@@ -1,67 +1,63 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Erro</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Font Awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+            integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
 
-    <title>Erro - PUC Minas</title>
+        <!-- Inter Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- Fonte Montserrat - Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- CSS -->
+        <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    </head>
+    <body>
+        <main>
+            <div id="model-3d"></div>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+            <div class="interaction-wrapper">
+                <div class="interaction">
+                    <img
+                        th:src="@{/images/pucminas-logo.png}"
+                        alt="Logo PUC Minas"
+                        class="interaction-icon"
+                    />
 
-    <link rel="stylesheet" th:href="@{/css/error.css}" />
-  </head>
+                    <h1 class="interaction-title">Erro</h1>
 
-  <body>
-    <div class="error-container">
-      <!-- =====================================================
-         ÁREA DA LOGO
-         ===================================================== -->
+                    <div class="interaction-message error">
+                        <strong th:if="${erro != null}" th:text="${erro}">
+                            Ocorreu um erro.
+                        </strong>
 
-      <div class="error-image-logo-container">
-        <img th:src="@{/images/pucminas-logo.png}" alt="Logo PUC Minas" />
-      </div>
+                        <span th:if="${erro == null}">
+                            Ocorreu um erro durante a operação.
+                        </span>
+                    </div>
 
-      <!-- =====================================================
-         ÁREA DO ERRO
-         ===================================================== -->
+                    <p class="interaction-options">
+                        <a th:href="@{/login}">Voltar para o login</a>
 
-      <div class="error-form">
-        <h4 class="error-title">Erro</h4>
+                        <span>|</span>
 
-        <!-- =================================================
-             MENSAGEM DE ERRO
-             ================================================= -->
-
-        <div class="error-message">
-          <strong th:if="${erro != null}" th:text="${erro}">
-            Ocorreu um erro.
-          </strong>
-
-          <span th:if="${erro == null}">
-            Ocorreu um erro durante a operação.
-          </span>
-        </div>
-
-        <!-- =================================================
-             OPÇÕES DE RETORNO
-             ================================================= -->
-
-        <p class="error-redirect-options">
-          <a th:href="@{/login}"> Voltar para o login </a>
-
-          <span>|</span>
-
-          <a th:href="@{/recoverpassword}"> Recuperar senha </a>
-        </p>
-      </div>
-    </div>
-  </body>
+                        <a th:href="@{/recoverpassword}">Recuperar senha</a>
+                    </p>
+                </div>
+            </div>
+        </main>
+    </body>
 </html>
