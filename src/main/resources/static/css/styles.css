@@ -1,17 +1,17 @@
 :root {
-    --surface: #111111;
-    --surface-container: #222222;
+  --surface: #0f0f11;
+  --surface-container: #18181b;
 
-    --border: #666666;
+  --border: #27272a;
 
-    --text: #eeeeee;
-    --subtext: #aaaaaa;
+  --text: #e4e4e7;
+  --subtext: #a1a1aa;
 
-    --accent: #3c6e1d;
-    --accent-text: #1c2e1d;
+  --accent: #818cf8;
+  --accent-text: #c7d2fe;
 
-    --error: #6a2d4f;
-    --error-text: #4a2d4f;
+  --error: #ef4444;
+  --error-text: #fca5a5;
 }
 
 * {
@@ -143,7 +143,7 @@ main {
     height: 2px;
     width: 0%;
 
-    transition: width 500ms ease;
+    transition: width 400ms ease;
 }
 
 .interaction .input-wrapper:focus-within::before {
