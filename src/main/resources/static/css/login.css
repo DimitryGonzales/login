@@ -9,6 +9,9 @@
 
     --accent: #3c6e1d;
     --accent-text: #1c2e1d;
+
+    --error: #6a2d4f;
+    --error-text: #4a2d4f;
 }
 
 * {
@@ -107,6 +110,12 @@ main {
     text-align: center;
 
     padding: 8px;
+}
+
+.interaction-message.error {
+    background-color: var(--error);
+
+    color: var(--error-text);
 }
 
 .interaction form {
